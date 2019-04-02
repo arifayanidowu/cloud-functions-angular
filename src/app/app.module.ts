@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { MatSnackBarModule } from '@angular/material';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { MatSnackBarModule } from "@angular/material";
 
-import { AppComponent } from './app.component';
-import { StylizePipe } from './stylize.pipe';
-import { environment } from '../environments/environment';
+import { AppComponent } from "./app.component";
+import { StylizePipe } from "./stylize.pipe";
+import { environment } from "../environments/environment";
 
 const configErrMsg = `You have not configured and imported the Firebase SDK.
 Make sure you go through the codelab setup instructions.`;
@@ -39,16 +39,13 @@ Storage tab and paste the name of your bucket which is displayed there.`;
 if (!environment.firebase) {
   if (!environment.firebase.apiKey) {
     window.alert(configErrMsg);
-  } else if (environment.firebase.storageBucket === '') {
+  } else if (environment.firebase.storageBucket === "") {
     window.alert(bucketErrMsg);
   }
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    StylizePipe
-  ],
+  declarations: [AppComponent, StylizePipe],
   imports: [
     BrowserModule,
     FormsModule,
@@ -62,4 +59,4 @@ if (!environment.firebase) {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "prod": "friendlychat-6be27"
+  }
+}
